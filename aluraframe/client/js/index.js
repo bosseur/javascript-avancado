@@ -4,9 +4,9 @@ var campos = [
     document.querySelector('#quantidade')
 ];
 
-console.log(campos);
+var tbody = document.querySelector('table tbody');
 
-document.querySelector('.form').addEventListener('submit', function(event) {
+let controller = new NegociacaoController();
 
-  alert('oi');
-});
+document.querySelector('.form').addEventListener('submit', controller.adiciona.bind(controller));
+document.querySelector('#apagarButton').addEventListener('click', controller.apaga.bind(controller));
